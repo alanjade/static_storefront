@@ -25,6 +25,16 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [isOpen])
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -33,12 +43,12 @@ export function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'var(--color-primary)' }}>
+        <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'var(--color-primary)' }}>
             <ShoppingBag className="w-4 h-4 text-white" />
           </div>
           <span
-            className={`font-display font-bold text-xl transition-colors duration-300 ${
+            className={`font-display font-bold text-lg sm:text-xl transition-colors duration-300 truncate max-w-[140px] sm:max-w-none ${
               scrolled ? 'text-gray-950' : 'text-white drop-shadow-md'
             }`}
             style={{ fontFamily: 'var(--font-display)', letterSpacing: '-0.01em' }}
@@ -60,7 +70,7 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
             href={generateGeneralInquiryLink()}
@@ -74,31 +84,36 @@ export function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Toggle — larger touch target */}
         <button
-          className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+          className="md:hidden p-2 rounded-lg hover:bg-gray-100/20 transition-colors -mr-1"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
         >
-          {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {isOpen
+            ? <X className={`w-6 h-6 ${scrolled ? 'text-gray-900' : 'text-white'}`} />
+            : <Menu className={`w-6 h-6 ${scrolled ? 'text-gray-900' : 'text-white'}`} />
+          }
         </button>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu — full-screen overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-gray-100"
+            transition={{ duration: 0.22, ease: 'easeInOut' }}
+            className="md:hidden overflow-hidden"
+            style={{ background: 'rgba(255,255,255,0.98)', backdropFilter: 'blur(20px)' }}
           >
-            <div className="px-4 py-4 flex flex-col gap-1">
+            <div className="px-4 py-4 flex flex-col gap-1 border-t border-gray-100">
               {navLinks.map(link => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="py-3 px-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+                  className="py-3 px-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-xl transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
@@ -108,7 +123,7 @@ export function Navbar() {
                 href={generateGeneralInquiryLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 flex items-center justify-center gap-2 py-3 rounded-full text-white font-semibold transition-all"
+                className="mt-3 flex items-center justify-center gap-2 py-3.5 rounded-full text-white font-semibold text-sm transition-all"
                 style={{ background: 'var(--color-primary)' }}
                 onClick={() => setIsOpen(false)}
               >

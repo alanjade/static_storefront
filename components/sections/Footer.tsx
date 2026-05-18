@@ -8,25 +8,26 @@ export function Footer() {
 
   return (
     <footer className="bg-gray-950 text-gray-400">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand */}
-          <div className="lg:col-span-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        {/* Grid: 1 col on mobile → 2 col on sm → 4 col on lg */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
+          {/* Brand — spans 2 cols on lg */}
+          <div className="sm:col-span-2 lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <div
-                className="w-9 h-9 rounded-lg flex items-center justify-center"
+                className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
                 style={{ background: 'var(--color-primary)' }}
               >
                 <ShoppingBag className="w-5 h-5 text-white" />
               </div>
               <span
-                className="font-bold text-xl text-white"
+                className="font-bold text-xl text-white truncate"
                 style={{ fontFamily: 'var(--font-display)' }}
               >
                 {storeConfig.name}
               </span>
             </div>
-            <p className="text-sm leading-relaxed mb-6 max-w-xs">
+            <p className="text-sm leading-relaxed mb-6 max-w-xs text-gray-400">
               {storeConfig.description}
             </p>
             <a
@@ -43,7 +44,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Quick Links</h4>
+            <h4 className="font-semibold text-white mb-4 text-sm sm:text-base">Quick Links</h4>
             <ul className="space-y-2.5 text-sm">
               {[
                 { href: '#categories', label: 'Categories' },
@@ -66,7 +67,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Contact Us</h4>
+            <h4 className="font-semibold text-white mb-4 text-sm sm:text-base">Contact Us</h4>
             <ul className="space-y-3 text-sm">
               <li>
                 <a
@@ -75,8 +76,8 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:text-white transition-colors"
                 >
-                  <MessageCircle className="w-4 h-4" style={{ color: 'var(--color-primary)' }} />
-                  {storeConfig.phone}
+                  <MessageCircle className="w-4 h-4 flex-shrink-0" style={{ color: 'var(--color-primary)' }} />
+                  <span className="truncate">{storeConfig.phone}</span>
                 </a>
               </li>
               <li>
@@ -84,8 +85,8 @@ export function Footer() {
                   href={`mailto:${storeConfig.email}`}
                   className="flex items-center gap-2 hover:text-white transition-colors"
                 >
-                  <Mail className="w-4 h-4" />
-                  {storeConfig.email}
+                  <Mail className="w-4 h-4 flex-shrink-0" />
+                  <span className="truncate">{storeConfig.email}</span>
                 </a>
               </li>
               <li>
@@ -93,8 +94,8 @@ export function Footer() {
                   href={`tel:${storeConfig.phone}`}
                   className="flex items-center gap-2 hover:text-white transition-colors"
                 >
-                  <Phone className="w-4 h-4" />
-                  {storeConfig.phone}
+                  <Phone className="w-4 h-4 flex-shrink-0" />
+                  <span className="truncate">{storeConfig.phone}</span>
                 </a>
               </li>
             </ul>
@@ -103,19 +104,22 @@ export function Footer() {
             <div className="mt-5 flex gap-3">
               {storeConfig.socialLinks.instagram && (
                 <a href={storeConfig.socialLinks.instagram} target="_blank" rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                  aria-label="Instagram"
+                  className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
                   <Instagram className="w-4 h-4" />
                 </a>
               )}
               {storeConfig.socialLinks.facebook && (
                 <a href={storeConfig.socialLinks.facebook} target="_blank" rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                  aria-label="Facebook"
+                  className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
                   <Facebook className="w-4 h-4" />
                 </a>
               )}
               {storeConfig.socialLinks.tiktok && (
                 <a href={storeConfig.socialLinks.tiktok} target="_blank" rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors text-sm">
+                  aria-label="TikTok"
+                  className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors text-sm">
                   🎵
                 </a>
               )}
@@ -124,10 +128,10 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600">
+        <div className="mt-10 sm:mt-12 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600">
           <p>© {year} {storeConfig.name}. All rights reserved.</p>
           <p className="flex items-center gap-2">
-            Built by{'     '}
+            Built by{' '}
             <span
               className="text-white text-base"
               style={{ fontFamily: 'var(--font-great-vibes)' }}

@@ -2,8 +2,11 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { products, categories } from '@/data'
+import { products as allProducts, categories as allCategories } from '@/data'
 import { ProductCard } from '@/components/products/ProductCard'
+
+const products = allProducts ?? []
+const categories = allCategories ?? []
 
 export function FeaturedProducts() {
   const [activeCategory, setActiveCategory] = useState('all')
@@ -40,38 +43,40 @@ export function FeaturedProducts() {
         </motion.div>
 
         {/* Category Filter */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="flex items-center gap-2 overflow-x-auto pb-2 mb-8 hide-scrollbar"
-        >
-          <button
-            onClick={() => setActiveCategory('all')}
-            className={`flex-shrink-0 px-5 py-2 rounded-full text-sm font-medium transition-all ${
-              activeCategory === 'all'
-                ? 'text-white shadow-md'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-            }`}
-            style={activeCategory === 'all' ? { background: 'var(--color-primary)' } : {}}
+        {categories.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-2 overflow-x-auto pb-2 mb-8 hide-scrollbar"
           >
-            All Products
-          </button>
-          {categories.map(cat => (
             <button
-              key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
+              onClick={() => setActiveCategory('all')}
               className={`flex-shrink-0 px-5 py-2 rounded-full text-sm font-medium transition-all ${
-                activeCategory === cat.id
+                activeCategory === 'all'
                   ? 'text-white shadow-md'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
-              style={activeCategory === cat.id ? { background: 'var(--color-primary)' } : {}}
+              style={activeCategory === 'all' ? { background: 'var(--color-primary)' } : {}}
             >
-              {cat.icon} {cat.name}
+              All Products
             </button>
-          ))}
-        </motion.div>
+            {categories.map(cat => (
+              <button
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`flex-shrink-0 px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                  activeCategory === cat.id
+                    ? 'text-white shadow-md'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+                style={activeCategory === cat.id ? { background: 'var(--color-primary)' } : {}}
+              >
+                {cat.icon} {cat.name}
+              </button>
+            ))}
+          </motion.div>
+        )}
 
         {/* Products Grid */}
         {filtered.length === 0 ? (

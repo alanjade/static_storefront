@@ -1,4 +1,4 @@
-import { Product, Category, Testimonial, FAQ } from '@/types'
+import type { Product, Category, Testimonial, FAQ } from '@/types'
 
 export const categories: Category[] = [
   {
@@ -55,7 +55,8 @@ export const products: Product[] = [
   {
     id: 'p1',
     name: 'Premium Wireless Earbuds Pro',
-    description: 'Experience crystal-clear sound with our premium wireless earbuds. Features active noise cancellation, 30-hour battery life, and premium audio quality. Perfect for music lovers and professionals.',
+    description:
+      'Experience crystal-clear sound with our premium wireless earbuds. Features active noise cancellation, 30-hour battery life, and premium audio quality. Perfect for music lovers and professionals.',
     price: 45000,
     images: [
       'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&q=80',
@@ -71,7 +72,8 @@ export const products: Product[] = [
   {
     id: 'p2',
     name: 'Designer Leather Handbag',
-    description: 'Handcrafted from genuine leather, this elegant handbag combines style with functionality. Features multiple compartments, gold hardware, and timeless design.',
+    description:
+      'Handcrafted from genuine leather, this elegant handbag combines style with functionality. Features multiple compartments, gold hardware, and timeless design.',
     price: 78000,
     images: [
       'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80',
@@ -87,7 +89,8 @@ export const products: Product[] = [
   {
     id: 'p3',
     name: 'Luxury Skincare Set',
-    description: 'Complete 5-piece skincare routine with vitamin C serum, moisturizer, eye cream, toner, and face wash. Dermatologist-tested for all skin types.',
+    description:
+      'Complete 5-piece skincare routine with vitamin C serum, moisturizer, eye cream, toner, and face wash. Dermatologist-tested for all skin types.',
     price: 32000,
     images: [
       'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&q=80',
@@ -103,7 +106,8 @@ export const products: Product[] = [
   {
     id: 'p4',
     name: 'Smart Watch Series X',
-    description: 'Stay connected and track your health with this premium smartwatch. Features heart rate monitoring, GPS, 7-day battery, and 50+ workout modes.',
+    description:
+      'Stay connected and track your health with this premium smartwatch. Features heart rate monitoring, GPS, 7-day battery, and 50+ workout modes.',
     price: 95000,
     images: [
       'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80',
@@ -119,7 +123,8 @@ export const products: Product[] = [
   {
     id: 'p5',
     name: 'Trendy Oversized Blazer',
-    description: 'Elevate your wardrobe with this versatile oversized blazer. Perfect for both office wear and casual outings. Available in multiple colors.',
+    description:
+      'Elevate your wardrobe with this versatile oversized blazer. Perfect for both office wear and casual outings. Available in multiple colors.',
     price: 28000,
     images: [
       'https://images.unsplash.com/photo-1594938298603-c8148c4b0d04?w=600&q=80',
@@ -134,7 +139,8 @@ export const products: Product[] = [
   {
     id: 'p6',
     name: 'Aromatherapy Diffuser Set',
-    description: 'Transform your home into a relaxing sanctuary with this ultrasonic aromatherapy diffuser. Includes 6 essential oil blends for sleep, focus, and relaxation.',
+    description:
+      'Transform your home into a relaxing sanctuary with this ultrasonic aromatherapy diffuser. Includes 6 essential oil blends for sleep, focus, and relaxation.',
     price: 18500,
     images: [
       'https://images.unsplash.com/photo-1545579133-99bb5ab189bd?w=600&q=80',
@@ -149,7 +155,8 @@ export const products: Product[] = [
   {
     id: 'p7',
     name: 'Premium Yoga Mat Bundle',
-    description: 'Professional-grade yoga mat with alignment lines, non-slip texture, and carry strap. Includes resistance bands and foam roller for complete workout set.',
+    description:
+      'Professional-grade yoga mat with alignment lines, non-slip texture, and carry strap. Includes resistance bands and foam roller for complete workout set.',
     price: 22000,
     images: [
       'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80',
@@ -164,7 +171,8 @@ export const products: Product[] = [
   {
     id: 'p8',
     name: 'Gold Chain Necklace Set',
-    description: 'Elegant 18K gold-plated chain necklace set featuring three layered necklaces of varying lengths. Perfect for everyday wear or special occasions.',
+    description:
+      'Elegant 18K gold-plated chain necklace set featuring three layered necklaces of varying lengths. Perfect for everyday wear or special occasions.',
     price: 15000,
     images: [
       'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80',
@@ -184,7 +192,8 @@ export const testimonials: Testimonial[] = [
     id: 't1',
     name: 'Adaeze Okonkwo',
     location: 'Lagos, Nigeria',
-    message: 'Absolutely love shopping here! The WhatsApp ordering process is so easy and my items arrived within 2 days. The quality exceeded my expectations.',
+    message:
+      'Absolutely love shopping here! The WhatsApp ordering process is so easy and my items arrived within 2 days. The quality exceeded my expectations.',
     rating: 5,
     date: '2 weeks ago',
   },
@@ -192,7 +201,8 @@ export const testimonials: Testimonial[] = [
     id: 't2',
     name: 'Emeka Chibuike',
     location: 'Abuja, Nigeria',
-    message: 'Best online shopping experience I\'ve had in Nigeria. The customer service via WhatsApp is incredibly responsive and the products are exactly as described.',
+    message:
+      "Best online shopping experience I've had in Nigeria. The customer service via WhatsApp is incredibly responsive and the products are exactly as described.",
     rating: 5,
     date: '1 month ago',
   },
@@ -200,7 +210,8 @@ export const testimonials: Testimonial[] = [
     id: 't3',
     name: 'Fatima Al-Hassan',
     location: 'Kano, Nigeria',
-    message: 'I was skeptical at first but after my first order, I\'m a loyal customer. Great prices, authentic products, and fast delivery. Highly recommend!',
+    message:
+      "I was skeptical at first but after my first order, I'm a loyal customer. Great prices, authentic products, and fast delivery. Highly recommend!",
     rating: 5,
     date: '3 weeks ago',
   },
@@ -208,7 +219,8 @@ export const testimonials: Testimonial[] = [
     id: 't4',
     name: 'Chidi Osei',
     location: 'Port Harcourt, Nigeria',
-    message: 'The smartwatch I ordered looks and works exactly like the pictures. Ordering through WhatsApp made the whole process seamless. 10/10 experience!',
+    message:
+      'The smartwatch I ordered looks and works exactly like the pictures. Ordering through WhatsApp made the whole process seamless. 10/10 experience!',
     rating: 5,
     date: '1 week ago',
   },
@@ -216,7 +228,8 @@ export const testimonials: Testimonial[] = [
     id: 't5',
     name: 'Ngozi Adeleke',
     location: 'Ibadan, Nigeria',
-    message: 'Found this store through Instagram and I\'m glad I did. The skincare set transformed my skin routine. Already placed my second order!',
+    message:
+      "Found this store through Instagram and I'm glad I did. The skincare set transformed my skin routine. Already placed my second order!",
     rating: 5,
     date: '5 days ago',
   },
@@ -224,7 +237,8 @@ export const testimonials: Testimonial[] = [
     id: 't6',
     name: 'Tunde Bakare',
     location: 'Lagos, Nigeria',
-    message: 'Professional service, quality products, and fair prices. The team responds on WhatsApp within minutes. This is how online shopping should work.',
+    message:
+      'Professional service, quality products, and fair prices. The team responds on WhatsApp within minutes. This is how online shopping should work.',
     rating: 4,
     date: '2 months ago',
   },
@@ -234,41 +248,49 @@ export const faqs: FAQ[] = [
   {
     id: 'f1',
     question: 'How do I place an order?',
-    answer: 'Simply browse our products, click the "Order on WhatsApp" button on any product, and you\'ll be connected directly to our team. We\'ll confirm your order, arrange payment, and schedule delivery - all through WhatsApp.',
+    answer:
+      "Simply browse our products, click the \"Order on WhatsApp\" button on any product, and you'll be connected directly to our team. We'll confirm your order, arrange payment, and schedule delivery - all through WhatsApp.",
   },
   {
     id: 'f2',
     question: 'What payment methods do you accept?',
-    answer: 'We accept bank transfers, mobile money (Opay, PalmPay, etc.), and cash on delivery for select locations. Our team will provide payment details when you place your order on WhatsApp.',
+    answer:
+      'We accept bank transfers, mobile money (Opay, PalmPay, etc.), and cash on delivery for select locations. Our team will provide payment details when you place your order on WhatsApp.',
   },
   {
     id: 'f3',
     question: 'How long does delivery take?',
-    answer: 'Lagos deliveries typically take 1-2 business days. Deliveries to other states take 2-5 business days depending on your location. Express delivery options are available.',
+    answer:
+      'Lagos deliveries typically take 1-2 business days. Deliveries to other states take 2-5 business days depending on your location. Express delivery options are available.',
   },
   {
     id: 'f4',
     question: 'Are the products authentic?',
-    answer: 'Yes, 100%. We source directly from verified suppliers and manufacturers. All products come with quality guarantees, and we offer returns if any item doesn\'t match the description.',
+    answer:
+      'Yes, 100%. We source directly from verified suppliers and manufacturers. All products come with quality guarantees, and we offer returns if any item doesn\'t match the description.',
   },
   {
     id: 'f5',
     question: 'What is your return policy?',
-    answer: 'We offer a 7-day return policy for items that are defective or significantly different from the description. Contact us on WhatsApp and we\'ll arrange a pickup and replacement.',
+    answer:
+      "We offer a 7-day return policy for items that are defective or significantly different from the description. Contact us on WhatsApp and we'll arrange a pickup and replacement.",
   },
   {
     id: 'f6',
     question: 'Do you deliver nationwide?',
-    answer: 'Yes! We deliver to all 36 states in Nigeria. Delivery fees and timelines vary by location. Chat with us on WhatsApp for a delivery quote to your specific location.',
+    answer:
+      'Yes! We deliver to all 36 states in Nigeria. Delivery fees and timelines vary by location. Chat with us on WhatsApp for a delivery quote to your specific location.',
   },
   {
     id: 'f7',
     question: 'Can I track my order?',
-    answer: 'Yes. Once your order is dispatched, we\'ll send you a tracking link and updates directly on WhatsApp. You\'ll know exactly when to expect your delivery.',
+    answer:
+      "Yes. Once your order is dispatched, we'll send you a tracking link and updates directly on WhatsApp. You'll know exactly when to expect your delivery.",
   },
   {
     id: 'f8',
     question: 'Do you offer bulk or wholesale pricing?',
-    answer: 'Absolutely! We offer special pricing for bulk orders and wholesale buyers. Contact us on WhatsApp to discuss your requirements and get a custom quote.',
+    answer:
+      'Absolutely! We offer special pricing for bulk orders and wholesale buyers. Contact us on WhatsApp to discuss your requirements and get a custom quote.',
   },
 ]

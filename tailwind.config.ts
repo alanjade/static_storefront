@@ -8,6 +8,15 @@ module.exports = {
     './src/**/*.{ts,tsx}',
   ],
   theme: {
+    // Add xs breakpoint for very small phones (< 400px)
+    screens: {
+      xs: '400px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       fontFamily: {
         display: ['var(--font-display)', 'Georgia', 'serif'],
