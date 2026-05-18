@@ -5,6 +5,7 @@ import { FloatingWhatsAppButton } from '@/components/shared/FloatingWhatsAppButt
 import { StickyMobileCTA } from '@/components/shared/StickyMobileCTA'
 import { PageLoader } from '@/components/shared/PageLoader'
 import { Great_Vibes } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 
 const greatVibes = Great_Vibes({
   subsets: ['latin'],
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <FloatingWhatsAppButton />
         {/* <StickyMobileCTA /> */}
+        <Analytics />
       </body>
     </html>
   )
