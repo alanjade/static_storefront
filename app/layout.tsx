@@ -48,7 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <PageLoader minDuration={1800} />
         {children}
         <FloatingWhatsAppButton />
-        <StickyMobileCTA />
+        {/* <StickyMobileCTA /> */}
       </body>
     </html>
   )

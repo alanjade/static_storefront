@@ -12,7 +12,7 @@ export function FloatingWhatsAppButton() {
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1.5, type: 'spring', stiffness: 200 }}
-      className="fixed z-50 right-4 bottom-[88px] md:bottom-8 md:right-8"
+      className="fixed z-50 right-4 bottom-6 md:bottom-8 md:right-8"
     >
       <a
         href={waLink}

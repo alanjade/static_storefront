@@ -26,8 +26,7 @@ export function ProductDetailsPage({ product }: Props) {
   const related = products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4)
 
   return (
-    // Extra bottom padding so content doesn't hide behind sticky mobile CTA
-    <div className="min-h-screen bg-gray-50 pb-32 md:pb-12 pt-20">
+    <div className="min-h-screen bg-gray-50 pb-12 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Breadcrumb — truncate long product names */}
         <div className="py-4 flex items-center gap-1.5 text-sm text-gray-500 overflow-hidden">
